@@ -246,10 +246,10 @@ class BinanceWebSocketApiManager(threading.Thread):
                  socks5_proxy_pass: str = None,
                  socks5_proxy_ssl_verification: bool = True,
                  auto_data_cleanup_stopped_streams: bool = False,
-                 lucit_api_secret: str = None,
-                 lucit_license_ini: str = None,
-                 lucit_license_profile: str = None,
-                 lucit_license_token: str = None,
+                 lucit_api_secret: str = "demo",
+                 lucit_license_ini: str = "demo",
+                 lucit_license_profile: str = "demo",
+                 lucit_license_token: str = "demo",
                  ubra_manager: BinanceRestApiManager = None):
         threading.Thread.__init__(self)
         self.name = __app_name__
