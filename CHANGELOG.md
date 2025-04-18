@@ -371,7 +371,7 @@ don't have to do anything special, please note that this process takes some time
 ### Added
 - This is the first code part to support the new [Binance Websocket API](https://developers.binance.com/docs/binance-trading-api/websocket_api)
   [issue#319](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api/issues/319):
-  - `WEBSOCKET_API_BASE_URI` to connection_settings.py and added URI for spot and testnet: `wss://ws-api.binance.com/ws-api/v3` and `wss://testnet.binance.vision/ws-api/v3`
+  - `WEBSOCKET_API_BASE_URI` to connection_settings.py and added URI for spot and testnet: `wss://ws-api.binance.com/ws-api/v3` and `wss://ws-api.testnet.binance.vision/ws-api/v3`
   - Upgraded `print_stream_info()` to show if a userData stream is a Websocket API stream or not.
   - New methods to manager.py `get_timestamp()`, `generate_signature()`, `order_params()`, `add_payload_to_stream`
   - ws_api.py to provide Binance websocket api functions in `ubwa.api.method(stream_id=stream_id)`.

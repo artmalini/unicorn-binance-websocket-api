@@ -68,7 +68,7 @@ CEX_EXCHANGES = [
 
 CONNECTION_SETTINGS = {
     Exchanges.BINANCE: (1024, "wss://stream.binance.com:9443/", "wss://ws-api.binance.com/ws-api/v3"),
-    Exchanges.BINANCE_TESTNET: (1024, "wss://testnet.binance.vision/", "wss://testnet.binance.vision/ws-api/v3"),
+    Exchanges.BINANCE_TESTNET: (1024, "wss://testnet.binance.vision/", "wss://ws-api.testnet.binance.vision/ws-api/v3"),
     Exchanges.BINANCE_MARGIN: (1024, "wss://stream.binance.com:9443/", None),
     Exchanges.BINANCE_MARGIN_TESTNET: (1024, "wss://testnet.binance.vision/", None),
     Exchanges.BINANCE_ISOLATED_MARGIN: (1024, "wss://stream.binance.com:9443/", None),

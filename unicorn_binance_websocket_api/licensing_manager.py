@@ -25,10 +25,10 @@ from pathlib import Path
 from requests.exceptions import ConnectionError, RequestException, HTTPError
 from simplejson.errors import JSONDecodeError
 from typing import Optional, Callable
-try:
-    from .licensing_exceptions import NoValidatedLucitLicense
-except ModuleNotFoundError:
-    from unicorn_binance_websocket_api.licensing_exceptions import NoValidatedLucitLicense
+# try:
+#     from .licensing_exceptions import NoValidatedLucitLicense
+# except ModuleNotFoundError:
+#     from unicorn_binance_websocket_api.licensing_exceptions import NoValidatedLucitLicense
 import cython
 import hashlib
 import hmac
@@ -131,16 +131,16 @@ class LucitLicensingManager(threading.Thread):
                         f"{str(platform.system())} {str(platform.release())} started ...")
         if start is True and self.sigterm is False:
             self.start()
-        while self.last_verified_licensing_result is None and self.sigterm is False and start is True:
-            # Block the main process till a valid license is available
-            time.sleep(0.1)
-        licensing_exception = self.get_license_exception()
-        if licensing_exception is not None:
-            raise NoValidatedLucitLicense(licensing_exception)
-        if self.sigterm is True:
-            logger.warning(f"LUCIT License Manager is shutting down!")
-        else:
-            logger.debug(f"LUCIT License Manager is ready!")
+        # while self.last_verified_licensing_result is None and self.sigterm is False and start is True:
+        #     # Block the main process till a valid license is available
+        #     time.sleep(0.1)
+        # licensing_exception = self.get_license_exception()
+        # if licensing_exception is not None:
+        #     raise NoValidatedLucitLicense(licensing_exception)
+        # if self.sigterm is True:
+        #     logger.warning(f"LUCIT License Manager is shutting down!")
+        # else:
+        #     logger.debug(f"LUCIT License Manager is ready!")
 
     def __enter__(self):
         logger.debug(f"Entering with-context of LucitLicensingManager() ...")

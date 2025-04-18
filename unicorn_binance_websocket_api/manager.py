@@ -19,7 +19,7 @@
 # Copyright (c) 2019-2024, LUCIT Systems and Development (https://www.lucit.tech)
 # All rights reserved.
 
-from .licensing_manager import LucitLicensingManager, NoValidatedLucitLicense
+# from .licensing_manager import LucitLicensingManager, NoValidatedLucitLicense
 from .connection_settings import CEX_EXCHANGES, DEX_EXCHANGES, CONNECTION_SETTINGS
 from .exceptions import *
 from .restclient import BinanceWebSocketApiRestclient
@@ -266,17 +266,17 @@ class BinanceWebSocketApiManager(threading.Thread):
         self.lucit_license_ini = lucit_license_ini
         self.lucit_license_profile = lucit_license_profile
         self.lucit_license_token = lucit_license_token
-        self.llm = LucitLicensingManager(api_secret=self.lucit_api_secret,
-                                         license_ini=self.lucit_license_ini,
-                                         license_profile=self.lucit_license_profile,
-                                         license_token=self.lucit_license_token,
-                                         parent_shutdown_function=self.stop_manager,
-                                         program_used=self.name,
-                                         needed_license_type="UNICORN-BINANCE-SUITE",
-                                         start=True)
-        licensing_exception = self.llm.get_license_exception()
-        if licensing_exception is not None:
-            raise NoValidatedLucitLicense(licensing_exception)
+        # self.llm = LucitLicensingManager(api_secret=self.lucit_api_secret,
+        #                                  license_ini=self.lucit_license_ini,
+        #                                  license_profile=self.lucit_license_profile,
+        #                                  license_token=self.lucit_license_token,
+        #                                  parent_shutdown_function=self.stop_manager,
+        #                                  program_used=self.name,
+        #                                  needed_license_type="UNICORN-BINANCE-SUITE",
+        #                                  start=True)
+        # licensing_exception = self.llm.get_license_exception()
+        # if licensing_exception is not None:
+        #     raise NoValidatedLucitLicense(licensing_exception)
 
         self.disable_colorama = disable_colorama
         if self.disable_colorama is not True:
@@ -4435,8 +4435,8 @@ class BinanceWebSocketApiManager(threading.Thread):
             except AttributeError as error_msg:
                 logger.debug(f"stop_manager() - AttributeError: {error_msg}")
             # close lucit license manger and the api session
-            if close_api_session is True:
-                self.llm.close()
+            # if close_api_session is True:
+            #     self.llm.close()
             return True
 
     def stop_manager_with_all_streams(self, close_api_session: bool = True):

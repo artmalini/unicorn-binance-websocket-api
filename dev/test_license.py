@@ -36,7 +36,7 @@ import os
 import sys
 import time
 from unicorn_binance_websocket_api.manager import BinanceWebSocketApiManager
-from lucit_licensing_python.exceptions import NoValidatedLucitLicense
+# from lucit_licensing_python.exceptions import NoValidatedLucitLicense
 
 
 logging.basicConfig(level=logging.DEBUG,
@@ -48,8 +48,8 @@ try:
     # To use this library you need a valid UNICORN Binance Suite License:
     # https://shop.lucit.services
     ubwa = BinanceWebSocketApiManager(lucit_license_profile="LUCIT")
-except NoValidatedLucitLicense as error_msg:
-    print(f"ERROR LEVEL 1: {error_msg}")
+except Exception as e:
+    print(f"ERROR LEVEL 1: {e}")
     sys.exit(1)
 
 ubwa.create_stream("trade", "btcusdt", output="UnicornFy")
