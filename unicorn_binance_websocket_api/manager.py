@@ -39,6 +39,7 @@ from unicorn_binance_websocket_api.sockets import BinanceWebSocketApiSocket
 from unicorn_binance_websocket_api.restclient import BinanceWebSocketApiRestclient
 from unicorn_binance_websocket_api.restserver import BinanceWebSocketApiRestServer
 from unicorn_binance_websocket_api.connection_settings import CEX_EXCHANGES, DEX_EXCHANGES, CONNECTION_SETTINGS
+from .api.api import WsApi
 from cheroot import wsgi
 from collections import deque
 from datetime import datetime
@@ -381,6 +382,7 @@ class BinanceWebSocketApiManager(threading.Thread):
         self.close_timeout_default = close_timeout_default
         self.ping_interval_default = ping_interval_default
         self.ping_timeout_default = ping_timeout_default
+        self.api: WsApi = WsApi(manager=self)
         self.start()
         self.replacement_text = "***SECRET_REMOVED***"
         self.restclient = BinanceWebSocketApiRestclient(self)
