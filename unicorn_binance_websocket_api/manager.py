@@ -384,12 +384,12 @@ class BinanceWebSocketApiManager(threading.Thread):
         self.start()
         self.replacement_text = "***SECRET_REMOVED***"
         self.restclient = BinanceWebSocketApiRestclient(self)
-        if warn_on_update and self.is_update_available():
-            update_msg = f"Release {self.name}_" + self.get_latest_version() + " is available, " \
-                         "please consider updating! (Changelog: https://github.com/LUCIT-Systems-and-Development/" \
-                         "unicorn-binance-websocket-api/blob/master/CHANGELOG.md)"
-            print(update_msg)
-            logger.warning(update_msg)
+        # if warn_on_update and self.is_update_available():
+        #     update_msg = f"Release {self.name}_" + self.get_latest_version() + " is available, " \
+        #                  "please consider updating! (Changelog: https://github.com/LUCIT-Systems-and-Development/" \
+        #                  "unicorn-binance-websocket-api/blob/master/CHANGELOG.md)"
+        #     print(update_msg)
+        #     logger.warning(update_msg)
 
     def _add_stream_to_stream_list(self,
                                    stream_id,

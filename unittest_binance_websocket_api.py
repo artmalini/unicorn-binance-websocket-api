@@ -228,19 +228,19 @@ class TestBinanceComManagerTest(unittest.TestCase):
 
     def test_create_uri_miniticker_regular_com(self):
         self.assertEqual(self.binance_com_testnet_websocket_api_manager.create_websocket_uri(["!miniTicker"], ["arr"]),
-                         'wss://testnet.binance.vision/ws/!miniTicker@arr')
+                         'wss://stream.testnet.binance.vision/ws/!miniTicker@arr')
 
     def test_create_uri_miniticker_reverse_com(self):
         self.assertEqual(self.binance_com_testnet_websocket_api_manager.create_websocket_uri(["arr"], ["!miniTicker"]),
-                         'wss://testnet.binance.vision/ws/!miniTicker@arr')
+                         'wss://stream.testnet.binance.vision/ws/!miniTicker@arr')
 
     def test_create_uri_ticker_regular_com(self):
         self.assertEqual(self.binance_com_testnet_websocket_api_manager.create_websocket_uri(["!ticker"], ["arr"]),
-                         'wss://testnet.binance.vision/ws/!ticker@arr')
+                         'wss://stream.testnet.binance.vision/ws/!ticker@arr')
 
     def test_create_uri_ticker_reverse_com(self):
         self.assertEqual(self.binance_com_testnet_websocket_api_manager.create_websocket_uri(["arr"], ["!ticker"]),
-                         'wss://testnet.binance.vision/ws/!ticker@arr')
+                         'wss://stream.testnet.binance.vision/ws/!ticker@arr')
 
     def test_create_uri_userdata_regular_false_com(self):
         self.assertFalse(self.binance_com_testnet_websocket_api_manager.create_websocket_uri(["!userData"], ["arr"]))
@@ -259,7 +259,7 @@ class TestBinanceComManagerTest(unittest.TestCase):
                                                                                                  stream_id,
                                                                                                  self.binance_com_testnet_api_key,
                                                                                                  self.binance_com_testnet_api_secret),
-                             r'wss://testnet.binance.vision/ws/.')
+                             r'wss://stream.testnet.binance.vision/ws/.')
 
     def test_create_uri_userdata_reverse_com(self):
         if len(self.binance_com_testnet_api_key) == 0 or len(self.binance_com_testnet_api_secret) == 0:
