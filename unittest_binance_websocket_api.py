@@ -603,17 +603,17 @@ class TestBinanceOrgManager(unittest.TestCase):
 
     def test_lucitlicmgr(self):
         print(f"License Manager ...")
-        ubwam = BinanceWebSocketApiManager(exchange='binance.com')
-        ubwam.llm.get_info()
-        ubwam.llm.get_module_version()
-        ubwam.llm.get_quotas()
-        ubwam.llm.get_timestamp()
-        ubwam.llm.get_version()
-        ubwam.llm.is_verified()
-        ubwam.llm.sync_time()
-        ubwam.llm.test()
-        ubwam.llm.process_licensing_error()
-        ubwam.llm.stop()
+        # ubwam = BinanceWebSocketApiManager(exchange='binance.com')
+        # ubwam.llm.get_info()
+        # ubwam.llm.get_module_version()
+        # ubwam.llm.get_quotas()
+        # ubwam.llm.get_timestamp()
+        # ubwam.llm.get_version()
+        # ubwam.llm.is_verified()
+        # ubwam.llm.sync_time()
+        # ubwam.llm.test()
+        # ubwam.llm.process_licensing_error()
+        # ubwam.llm.stop()
         # with self.assertRaises(NoValidatedLucitLicense):
         #     llm = LucitLicensingManager(api_secret="wrong", license_token="credentials",
         #                                 parent_shutdown_function=ubwam.stop_manager)

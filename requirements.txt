@@ -16,6 +16,6 @@ requests>=2.31.0
 simplejson
 orjson
 unicorn-fy>=0.14.2
-unicorn-binance-rest-api>=2.5.1
+unicorn-binance-rest-api @ git+https://github.com/artmalini/unicorn-binance-rest-api.git@eb9a95d9a1cd91ed3a7cee6b9fd3e62f4ef7fafa
 websocket-client
 websockets==11.0.3
