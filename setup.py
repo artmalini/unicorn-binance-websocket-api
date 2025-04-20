@@ -34,9 +34,6 @@
 # IN THE SOFTWARE.
 
 import setuptools
-from unicorn_binance_websocket_api.manager import BinanceWebSocketApiManager
-
-ubwa = BinanceWebSocketApiManager()
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -45,17 +42,24 @@ setuptools.setup(
      name='unicorn-binance-websocket-api',
      author="LUCIT Systems and Development",
      author_email='info@lucit.tech',
-     description="An unofficial Python API to use the Binance Websocket API`s (com+testnet, com-margin+testnet, "
-                 "com-isolated_margin+testnet, com-futures+testnet, jersey, us, jex, dex/chain+testnet) in a easy, fast"
-                 ", flexible, robust and fully-featured way.",
+     description="An unofficial Python API to use the Binance Websocket API`s...",
      long_description=long_description,
      long_description_content_type="text/markdown",
      license='MIT License',
-     install_requires=['colorama', 'requests', 'websocket-client', 'websockets==10.4', 'flask_restful',
-                       'cheroot', 'flask', 'ujson', 'psutil', 'PySocks', 'unicorn-fy'],
-     keywords='binance, asyncio, async, asynchronous, concurrent, websocket-api, webstream-api, '
-              'binance-websocket, binance-webstream, webstream, websocket, api, binance-jersey, binance-dex, '
-              'binance-futures, binance-margin, binance-us',
+     install_requires=[
+         'colorama',
+         'requests',
+         'websocket-client',
+         'websockets==10.4',
+         'flask_restful',
+         'cheroot',
+         'flask',
+         'ujson',
+         'psutil',
+         'PySocks',
+         'unicorn-fy'
+     ],
+     keywords='binance, asyncio, async, websocket-api...',
      project_urls={
          'Howto': 'https://www.lucit.tech/unicorn-binance-websocket-api.html#howto',
          'Documentation': 'https://unicorn-binance-websocket-api.docs.lucit.tech',
@@ -87,5 +91,3 @@ setuptools.setup(
          "Framework :: AsyncIO",
      ],
 )
-
-ubwa.stop_manager_with_all_streams()
