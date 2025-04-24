@@ -26,6 +26,7 @@ from .restclient import BinanceWebSocketApiRestclient
 from .restserver import BinanceWebSocketApiRestServer
 from .sockets import BinanceWebSocketApiSocket
 from .api.api import WsApi
+from unicorn_binance_rest_api import BinanceRestApiManager
 from unicorn_binance_rest_api import BinanceRestApiManager, BinanceAPIException
 from unicorn_fy.unicorn_fy import UnicornFy
 from cheroot import wsgi

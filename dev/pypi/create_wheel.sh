@@ -21,16 +21,16 @@
 #set -xeuo pipefail
 #set -xeu pipefail
 
-security-check() {
-    echo -n "Did you change the version in \`CHANGELOG.md\` and used \`dev/set_version.py\`? [yes|NO] "
-    local SURE
-    read SURE
-    if [ "$SURE" != "yes" ]; then
-        exit 1
-    fi
-    echo "https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api/actions/workflows/build_wheels.yml"
-    echo "https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api/actions/workflows/build_conda.yml"
-}
+# security-check() {
+#     echo -n "Did you change the version in \`CHANGELOG.md\` and used \`dev/set_version.py\`? [yes|NO] "
+#     local SURE
+#     read SURE
+#     if [ "$SURE" != "yes" ]; then
+#         exit 1
+#     fi
+#     echo "https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api/actions/workflows/build_wheels.yml"
+#     echo "https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api/actions/workflows/build_conda.yml"
+# }
 
 compile-check() {
     echo -n "Compile local? [yes|NO] "
@@ -43,5 +43,5 @@ compile-check() {
     python3 setup.py bdist_wheel sdist
 }
 
-security-check
+# security-check
 compile-check

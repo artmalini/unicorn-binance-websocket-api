@@ -60,7 +60,7 @@ setup(
     version="2.9.0",
     author="LUCIT Systems and Development",
     author_email='info@lucit.tech',
-    url="https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api",
+    url="https://github.com/artmalini/unicorn-binance-websocket-api",
     description="A Python SDK by LUCIT to use the Binance Websocket API`s (com+testnet, "
                 "com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, "
                 "dex/chain+testnet) in a simple, fast, flexible, robust and fully-featured way.",

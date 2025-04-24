@@ -45,7 +45,6 @@ requirements:
     - python
     - lucit::lucit-licensing-python >=1.8.2
     - lucit::unicorn-fy >=0.14.2
-    - lucit::unicorn-binance-rest-api >=2.5.1
     - cheroot
     - colorama
     - Cython

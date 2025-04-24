@@ -76,7 +76,7 @@ class TestBinanceComManager(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print(f"\r\nTestBinanceComManager:")
-        cls.ubwa = BinanceWebSocketApiManager(exchange="binance.us",
+        cls.ubwa = BinanceWebSocketApiManager(exchange="binance.com",
                                               disable_colorama=True,
                                               debug=True)
         cls.binance_com_api_key = ""
@@ -94,22 +94,22 @@ class TestBinanceComManager(unittest.TestCase):
     def test_create_uri_miniticker_regular_com(self):
         print(f"test_create_uri_miniticker_regular_com():")
         self.assertEqual(self.__class__.ubwa.create_websocket_uri(["!miniTicker"], ["arr"]),
-                         'wss://stream.binance.us:9443/ws/!miniTicker@arr')
+                         'wss://stream.binance.com:9443/ws/!miniTicker@arr')
 
     def test_create_uri_miniticker_reverse_com(self):
         print(f"test_create_uri_miniticker_reverse_com():")
         self.assertEqual(self.__class__.ubwa.create_websocket_uri(["arr"], ["!miniTicker"]),
-                         'wss://stream.binance.us:9443/ws/!miniTicker@arr')
+                         'wss://stream.binance.com:9443/ws/!miniTicker@arr')
 
     def test_create_uri_ticker_regular_com(self):
         print(f"test_create_uri_ticker_regular_com():")
         self.assertEqual(self.__class__.ubwa.create_websocket_uri(["!ticker"], ["arr"]),
-                         'wss://stream.binance.us:9443/ws/!ticker@arr')
+                         'wss://stream.binance.com:9443/ws/!ticker@arr')
 
     def test_create_uri_ticker_reverse_com(self):
         print(f"test_create_uri_ticker_reverse_com():")
         self.assertEqual(self.__class__.ubwa.create_websocket_uri(["arr"], ["!ticker"]),
-                         'wss://stream.binance.us:9443/ws/!ticker@arr')
+                         'wss://stream.binance.com:9443/ws/!ticker@arr')
 
     def test_create_uri_userdata_regular_false_com(self):
         print(f"test_create_uri_userdata_regular_false_com():")
@@ -183,7 +183,7 @@ class TestBinanceComManager(unittest.TestCase):
 
     def test_get_exchange(self):
         print(f"test_get_exchange():")
-        self.assertEqual(self.__class__.ubwa.get_exchange(), "binance.us")
+        self.assertEqual(self.__class__.ubwa.get_exchange(), "binance.com")
 
     def test_get_listenkey_from_restclient(self):
         print(f"test_get_listenkey_from_restclient():")
@@ -221,7 +221,7 @@ class TestBinanceComManager(unittest.TestCase):
 
     def test_create_stream_userdata_with(self):
         print(f"test_create_stream_userdata_with():")
-        with BinanceWebSocketApiManager(exchange="binance.us") as ubwa:
+        with BinanceWebSocketApiManager(exchange="binance.com") as ubwa:
             ubwa.create_stream('arr', '!userData', stream_label="userDataBad")
             time.sleep(10)
         print(f"Leaving ... ")
@@ -682,7 +682,7 @@ class TestApiLive(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print(f"\r\nTestApiLive:")
-        cls.ubwa = BinanceWebSocketApiManager(exchange="binance.us",
+        cls.ubwa = BinanceWebSocketApiManager(exchange="binance.com",
                                               debug=True,
                                               enable_stream_signal_buffer=True,
                                               auto_data_cleanup_stopped_streams=True)
@@ -957,7 +957,7 @@ class TestApiLive(unittest.TestCase):
         self.__class__.ubwa.remove_ansi_escape_codes("test text")
         self.__class__.ubwa.pop_stream_signal_from_stream_signal_buffer()
 
-        with BinanceRestApiManager(exchange="binance.us") as ubra:
+        with BinanceRestApiManager(exchange="binance.com") as ubra:
             markets = []
             data = ubra.get_all_tickers()
             for item in data:
