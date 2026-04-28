@@ -26,7 +26,6 @@ requirements:
   host:
     - python
     - mypy
-    - lucit::lucit-licensing-python >=1.8.2
     - lucit::unicorn-fy >=0.14.2
     - cheroot
     - colorama
@@ -43,7 +42,6 @@ requirements:
     - typing_extensions
   run:
     - python
-    - lucit::lucit-licensing-python >=1.8.2
     - lucit::unicorn-fy >=0.14.2
     - cheroot
     - colorama
